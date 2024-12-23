@@ -1,0 +1,1 @@
+fn main() {    let mut v = vec![1, 2, 3];    {        let slice = &mut v[..];        for i in slice.iter_mut() {            *i *= 2;        }        println!("{:?}", slice);    }    println!("{:?}", v);}

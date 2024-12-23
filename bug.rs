@@ -1,0 +1,1 @@
+fn main() {    let mut v = vec![1, 2, 3];    let ptr = v.as_mut_ptr();    let len = v.len();    unsafe {        let slice = std::slice::from_raw_parts_mut(ptr, len);        // modify the vector through the raw pointer        for i in slice.iter_mut() {            *i *= 2;        }        println!("{:?}", slice);    }    println!("{:?}", v);}
